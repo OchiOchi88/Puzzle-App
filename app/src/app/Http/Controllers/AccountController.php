@@ -14,7 +14,6 @@ class AccountController extends Controller
 
     public function doLogin(Request $request)
     {
-
         if ($request["name"] == "jobi" && $request["pass"] == "jobi") {
             //dd($request);
             return view('subject/list/index');
@@ -34,6 +33,5 @@ class AccountController extends Controller
     {
         return view('subject/list/infoIndex',
             ['page' => $request["page"]]);
-
     }
 }

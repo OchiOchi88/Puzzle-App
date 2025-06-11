@@ -1,6 +1,5 @@
 <html lang="ja">
 <style>
-
     ul {
         background-color: #2565FF;
         border: solid 2px #000000;
@@ -9,7 +8,6 @@
     }
 
     div.li {
-
         display: flex;
         flex-direction: column;
     }
