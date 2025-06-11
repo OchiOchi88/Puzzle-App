@@ -7,8 +7,9 @@ use Illuminate\Support\Facades\Route;
 //    return view('welcome');
 //});
 
-Route::get('accounts/index', [AccountController::class, 'index']);
+//Route::get('accounts/index', [AccountController::class, 'index']);
+Route::get('/{error_id?}', [AccountController::class, 'login']);
 Route::post('doLogin', [AccountController::class, 'doLogin']);
 Route::get('userIndex', [AccountController::class, 'userIndex']);
 Route::get('scoreIndex', [AccountController::class, 'scoreIndex']);
-Route::get('/{error_id?}', [AccountController::class, 'login']);
+
