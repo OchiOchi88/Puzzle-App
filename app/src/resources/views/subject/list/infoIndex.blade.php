@@ -90,7 +90,7 @@ $data = [
 </div>
 <form class="dummy">
     <input type="text" placeholder="検索したい単語を入力"/>
-    <input type="submit" value="検索"/>
+    <input type="button" value="検索"/>
 </form>
 <form method="post" action="{{url('doLogin')}}">
     @csrf
