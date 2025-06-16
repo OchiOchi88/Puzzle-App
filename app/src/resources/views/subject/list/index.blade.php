@@ -9,6 +9,10 @@
         <input type="submit" value="スコア一覧へ"/>
         <input type="hidden" name="page" value="2"/>
     </form>
+    <form method="get" action="{{url('index')}}">
+        @csrf
+        <input type="submit" value="DBユーザー一覧へ"/>
+    </form>
     <form method="get" action="{{url('/')}}">
         @csrf
         <input type="submit" value="ログアウト"/>

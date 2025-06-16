@@ -9,13 +9,13 @@ use Barryvdh\Debugbar\Facades\Debugbar;
 class AccountController extends Controller
 {
 
-//    public function index(Request $request)
-//    {
-//        //  テーブルのすべてのレコードを取得
-//        $accounts = Account::All();
-//        //$account = Account::where('name','=','jobi')->get();
-//        return view('accounts/index', ['accounts' => $accounts]);
-//    }
+    public function index(Request $request)
+    {
+        //  テーブルのすべてのレコードを取得
+        $accounts = Account::All();
+        //$account = Account::where('name','=','jobi')->get();
+        return view('accounts/index', ['accounts' => $accounts]);
+    }
 
     public function login(Request $request)
     {
