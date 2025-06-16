@@ -12,4 +12,5 @@ Route::get('/{error_id?}', [AccountController::class, 'login']);
 Route::post('doLogin', [AccountController::class, 'doLogin']);
 Route::get('userIndex', [AccountController::class, 'userIndex']);
 Route::get('scoreIndex', [AccountController::class, 'scoreIndex']);
+//Route::get('/', [AccountController::class, 'index']);
 
