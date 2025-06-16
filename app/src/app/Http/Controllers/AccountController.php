@@ -11,41 +11,29 @@ class AccountController extends Controller
 
     public function index(Request $request)
     {
-        //  テーブルのすべてのレコードを取得
-        $accounts = Account::All();
-        //$account = Account::where('name','=','jobi')->get();
-        return view('accounts/index', ['accounts' => $accounts]);
+        if ($request['page'] == 1) {
+            return view('subject/list/infoIndex',
+                ['page' => $request["page"]]);
+        } else {
+            if ($request['page'] == 2) {
+                return view('subject/list/infoIndex',
+                    ['page' => $request["page"]]);
+            } else {
+                if ($request['page'] == 3) {
+                    //  テーブルのすべてのレコードを取得
+                    $accounts = Account::All();
+                    //$account = Account::where('name','=','jobi')->get();
+                    return view('accounts/index', ['accounts' => $accounts]);
+                } else {
+                    return view('/');
+                }
+            }
+        }
+
     }
 
     public function login(Request $request)
     {
         return view('subject/login/index', ['error' => $request->error_id]);
-    }
-
-    public function doLogin(Request $request)
-    {
-        $validated = $request->validate([
-            'name' => ['required', 'min:4', 'max:20'],
-            'password' => ['required']
-        ]);
-        if ($request["name"] == "jobi" && $request["pass"] == "jobi") {
-            //dd($request);
-            return view('subject/list/index');
-        } else {
-            $error_id = "入力された情報が違います！ユーザー名とパスワードはjobiのみ有効です！";
-            return view('subject/login/index', ['error_id' => $error_id]);
-        }
-    }
-
-    public function userIndex(Request $request)
-    {
-        return view('subject/list/infoIndex',
-            ['page' => $request["page"]]);
-    }
-
-    public function scoreIndex(Request $request)
-    {
-        return view('subject/list/infoIndex',
-            ['page' => $request["page"]]);
     }
 }

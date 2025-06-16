@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Account;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
@@ -13,14 +15,14 @@ class AuthController extends Controller
 
     public function login(Request $request)
     {
-        //$validated = $request->validate([
-        //    'name' => ['required', 'min:4', 'max:20'],
-        //    'password' => ['required']
-        //]);
-        if ($request["name"] == "jobi" && $request["pass"] == "jobi") {
+        //  条件を指定して取得
+        $password = $request['pass'];
+        $account = Account::where('name', '=', $request['name'])->first();
+
+        if (Hash::check($password, $account->password)) {
             return view('subject/list/index');
         } else {
-            $error_id = "入力された情報が違います！ユーザー名とパスワードはjobiのみ有効です！";
+            $error_id = "入力された情報が違います！";
             return view('auth/index', ['error_id' => $error_id]);
         }
     }

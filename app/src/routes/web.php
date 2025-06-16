@@ -11,8 +11,8 @@ use App\Http\Controllers\AuthController;
 //Route::get('accounts/index', [AccountController::class, 'index']);
 //Route::get('/{error_id?}', [AccountController::class, 'login']);
 //Route::post('doLogin', [AccountController::class, 'doLogin']);
-Route::get('userIndex', [AccountController::class, 'userIndex']);
-Route::get('scoreIndex', [AccountController::class, 'scoreIndex']);
+//Route::get('userIndex', [AccountController::class, 'userIndex']);
+//Route::get('scoreIndex', [AccountController::class, 'scoreIndex']);
 Route::get('index', [AccountController::class, 'index']);
 
 Route::get('{error_id?}', [AuthController::class, 'index']);

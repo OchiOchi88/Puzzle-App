@@ -1,10 +1,10 @@
 <div>
-    <form method="get" action="{{url('userIndex')}}">
+    <form method="get" action="{{url('index')}}">
         @csrf
         <input type="submit" value="ユーザー一覧へ"/>
         <input type="hidden" name="page" value="1"/>
     </form>
-    <form method="get" action="{{url('scoreIndex')}}">
+    <form method="get" action="{{url('index')}}">
         @csrf
         <input type="submit" value="スコア一覧へ"/>
         <input type="hidden" name="page" value="2"/>
@@ -12,6 +12,7 @@
     <form method="get" action="{{url('index')}}">
         @csrf
         <input type="submit" value="DBユーザー一覧へ"/>
+        <input type="hidden" name="page" value="3"/>
     </form>
     <form method="get" action="{{url('/')}}">
         @csrf
