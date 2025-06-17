@@ -18,12 +18,20 @@ class AuthController extends Controller
         //  条件を指定して取得
         $password = $request['pass'];
         $account = Account::where('name', '=', $request['name'])->first();
-
-        if (Hash::check($password, $account->password)) {
-            return view('subject/list/index');
-        } else {
-            $error_id = "入力された情報が違います！";
+        if (empty($request['name'])) {
+            $error_id = "お名前は必須です！";
             return view('auth/index', ['error_id' => $error_id]);
+        }
+        if (empty($request['pass'])) {
+            $error_id = "パスワードは必須です！";
+            return view('auth/index', ['error_id' => $error_id]);
+        } else {
+            if (Hash::check($password, $account->password)) {
+                return view('subject/list/index');
+            } else {
+                $error_id = "入力された情報が違います！";
+                return view('auth/index', ['error_id' => $error_id]);
+            }
         }
     }
 

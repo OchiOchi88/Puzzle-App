@@ -13,8 +13,8 @@ return new class extends Migration {
         Schema::create('items', function (Blueprint $table) {
             $table->id();
             $table->string('name', 255);
-            //$table->integer('atk');
-            //$table->integer('def');
+            $table->integer('type');
+            $table->integer('value');
             $table->string('text', 255);
             $table->timestamps();
         });
