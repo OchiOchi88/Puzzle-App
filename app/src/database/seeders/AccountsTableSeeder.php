@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Clan;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Account;
@@ -108,7 +109,7 @@ class AccountsTableSeeder extends Seeder
             この聖杯の水にはどんな傷や疫病をも治療する力が込められており、
             使用者のHPをとても大きく回復し、すべての状態異常を治療する。
             この世界では神頼みは非常に広く親しまれており、
-            神という存在を信仰しているものが多いため、効果があるといわれている。
+            神の存在を信仰している者が多いため、効果があるといわれている。
             「魔の生徒」「竜の家族」所属のプレイヤーは回復量が激減し、
             低確率で毒状態になる。'
         ]);
@@ -200,6 +201,18 @@ class AccountsTableSeeder extends Seeder
             'user_id' => 7,
             'item_id' => 6,
             'amount' => 1
+        ]);
+        Clan::create([
+            'name' => '神の弟子'
+        ]);
+        Clan::create([
+            'name' => '魔の生徒'
+        ]);
+        Clan::create([
+            'name' => '竜の家族'
+        ]);
+        Clan::create([
+            'name' => '復讐者'
         ]);
     }
 }

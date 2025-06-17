@@ -1,42 +1,3 @@
-@if($page==1)
-        <?php
-        $tabs = ['ID', '名前', 'パスワード'];
-        ?>
-@elseif($page==2)
-        <?php
-        $tabs = ['ID', '名前', 'スコア'];
-        ?>
-@endif
-<?php
-
-$data = [
-    [
-        'ID' => 1,
-        '名前' => 'nico',
-        'パスワード' => '1212029',
-        'スコア' => 500
-    ],
-    [
-        'ID' => 2,
-        '名前' => 'karla',
-        'パスワード' => '373606',
-        'スコア' => 470
-    ],
-    [
-        'ID' => 3,
-        '名前' => 'marie',
-        'パスワード' => '44278',
-        'スコア' => 900
-    ],
-    [
-        'ID' => 4,
-        '名前' => 'fellya',
-        'パスワード' => '09298959',
-        'スコア' => 580
-    ]
-];
-?>
-
 <html lang="ja">
 <style>
 
@@ -45,12 +6,8 @@ $data = [
         flex-direction: row;
         width: auto;
         margin: 1%;
-    }
-
-    div.li {
-        display: flex;
-        flex-direction: column;
-        border: solid 1px #000000;
+        border-collapse: collapse;
+        vertical-align: top;
     }
 
     div.th {
@@ -59,8 +16,16 @@ $data = [
     }
 
     div.li {
+        display: flex;
+        flex-direction: column;
         background-color: #BDBDFF;
         border: solid 1px #000000;
+        max-height: 10000px;
+        min-width: 100px;
+    }
+
+    .li > .li {
+        flex: 1;
     }
 
     form.dummy {
@@ -68,6 +33,7 @@ $data = [
         flex-direction: row;
     }
 </style>
+
 <body>
 @if($page ==1)
     <h1>■ユーザー一覧■</h1>
@@ -81,13 +47,68 @@ $data = [
     <h1>■エラー■</h1>
 @endif
 <div class="ul">
-    @foreach($tabs as $tabName)
+    @foreach($columns as $column)
+        @if($column == "created_at" || $column == "updated_at")
+                <?php continue ?>
+        @endif
         <div class="li">
             <div class="th">
-                {{$tabName}}
+                @if($page == 1)
+                    @if($column == "clan")
+                        所属
+                    @else
+                        {{$column}}
+                    @endif
+                @elseif($page == 3)
+                    @if($column == "user_id")
+                        ユーザー名
+                    @elseif($column == "item_id")
+                        アイテム名
+                    @else
+                        {{$column}}
+                    @endif
+                @else
+                    {{$column}}
+                @endif
             </div>
-            @foreach($data as $account)
-                <div class="li">{{$account[$tabName]}}</div>
+            @foreach($accounts as $account)
+                <div class="li">
+                    @if($page == 1)
+                        @if($column == "clan")
+                                <?php $output = $account[$column] - 1; ?>
+                            @if($output == -1)
+                                無所属
+                            @else
+                                {{$clans[$output]["name"]}}
+                            @endif
+                        @else
+                            {{$account[$column]}}
+                        @endif
+                    @elseif($page == 2)
+                        @if($column == "type")
+                            @if($account[$column] == 1)
+                                消耗品
+                            @else
+                                装備品
+                            @endif
+                        @else
+                            {{$account[$column]}}
+                        @endif
+                    @elseif($page == 3)
+                        @if($column == "user_id")
+                                <?php $output = $account[$column] - 1; ?>
+                            {{$user[$output]["name"]}}
+                        @elseif($column == "item_id")
+                                <?php $output = $account[$column] - 1; ?>
+                            {{$item[$output]["name"]}}
+                        @else
+                            {{$account[$column]}}
+                        @endif
+                    @else
+                        {{$account[$column]}}
+                    @endif
+
+                </div>
             @endforeach
         </div>
     @endforeach

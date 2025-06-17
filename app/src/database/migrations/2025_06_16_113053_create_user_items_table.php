@@ -12,9 +12,9 @@ return new class extends Migration {
     {
         Schema::create('user_items', function (Blueprint $table) {
             $table->id();
-            $table->intager('user_id');
-            $table->intager('item_id');
-            $table->intager('amount');
+            $table->integer('user_id');
+            $table->integer('item_id');
+            $table->integer('amount');
             $table->timestamps();
         });
     }

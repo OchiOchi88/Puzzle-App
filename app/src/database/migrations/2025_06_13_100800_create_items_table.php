@@ -15,7 +15,7 @@ return new class extends Migration {
             $table->string('name', 255);
             $table->integer('type');
             $table->integer('value');
-            $table->string('text', 255);
+            $table->string('text', 1024);
             $table->timestamps();
         });
     }
