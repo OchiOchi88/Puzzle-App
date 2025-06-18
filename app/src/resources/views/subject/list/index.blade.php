@@ -1,15 +1,15 @@
 <div>
-    <form method="get" action="{{url('index')}}">
+    <form method="get" action="{{url('user')}}">
         @csrf
         <input type="submit" value="ユーザー一覧へ"/>
         <input type="hidden" name="page" value="1"/>
     </form>
-    <form method="get" action="{{url('index')}}">
+    <form method="get" action="{{url('item')}}">
         @csrf
         <input type="submit" value="アイテム一覧へ"/>
         <input type="hidden" name="page" value="2"/>
     </form>
-    <form method="get" action="{{url('index')}}">
+    <form method="get" action="{{url('userItem')}}">
         @csrf
         <input type="submit" value="所持アイテム一覧へ"/>
         <input type="hidden" name="page" value="3"/>

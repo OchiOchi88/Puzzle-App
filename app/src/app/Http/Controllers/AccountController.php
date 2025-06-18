@@ -16,64 +16,20 @@ class AccountController extends Controller
 
     public function index(Request $request)
     {
+        //  DB接続
         $pdo = new PDO("mysql:host=mysql;dbname=puzzle_db;", "jobi", "jobi");
 
-        if ($request['page'] == 1) {
-            $sql = 'show columns from users';
-            $sth = $pdo->query($sql);
-            $columns = $sth->fetchAll(PDO::FETCH_COLUMN);
+        //  管理アカウントテーブルのカラム名を取得するSQL
+        $sql = 'show columns from accounts';
+        //  $sthを使って$sqlのSQL文を実行する(第一段階)
+        $sth = $pdo->query($sql);
+        //  $columnsに$sthの実行結果を取得させる(第二段階)
+        $columns = $sth->fetchAll(PDO::FETCH_COLUMN);
 
-            //  ユーザーテーブルのすべてのレコードを取得
-            $accounts = User::All();
-            $clans = Clan::All();
-            return view('subject/list/infoIndex',
-                ['page' => $request["page"], 'columns' => $columns, 'accounts' => $accounts, 'clans' => $clans]);
-        } else {
-            if ($request['page'] == 2) {
-                $sql = 'show columns from items';
-                $sth = $pdo->query($sql);
-                $columns = $sth->fetchAll(PDO::FETCH_COLUMN);
-
-                //  アイテムテーブルのすべてのレコードを取得
-                $accounts = Item::All();
-                return view('subject/list/infoIndex',
-                    ['page' => $request["page"], 'columns' => $columns, 'accounts' => $accounts]);
-            } else {
-                if ($request['page'] == 3) {
-                    $sql = 'show columns from user_items';
-                    $sth = $pdo->query($sql);
-                    $columns = $sth->fetchAll(PDO::FETCH_COLUMN);
-
-                    //  所持アイテムテーブルのすべてのレコードを取得
-                    $accounts = UserItem::All();
-                    $user = User::All();
-                    $item = Item::All();
-                    //dd($user, $item);
-                    return view('subject/list/infoIndex',
-                        [
-                            'page' => $request["page"],
-                            'columns' => $columns,
-                            'accounts' => $accounts,
-                            'user' => $user,
-                            'item' => $item
-                        ]);
-                } else {
-                    if ($request['page'] == 4) {
-                        $sql = 'show columns from accounts';
-                        $sth = $pdo->query($sql);
-                        $columns = $sth->fetchAll(PDO::FETCH_COLUMN);
-
-                        //  管理者情報テーブルのすべてのレコードを取得
-                        $accounts = Account::All();
-                        return view('subject/list/infoIndex',
-                            ['page' => $request["page"], 'columns' => $columns, 'accounts' => $accounts]);
-                    } else {
-                        //  なぜかpageのデータを受け取れなかったらログイン画面に戻す
-                        return view('/');
-                    }
-                }
-            }
-        }
+        //  管理者情報テーブルのすべてのレコードを取得
+        $accounts = Account::All();
+        return view('subject/list/infoIndex',
+            ['page' => $request["page"], 'columns' => $columns, 'accounts' => $accounts]);
 
     }
 
