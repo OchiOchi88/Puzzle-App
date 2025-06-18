@@ -24,7 +24,19 @@ class UserItemController extends Controller
         $columns = $sth->fetchAll(PDO::FETCH_COLUMN);
 
         //  所持アイテムテーブルのすべてのレコードを取得
-        $accounts = UserItem::All();
+        //$accounts = UserItem::All();
+
+        $haveItems = UserItem::select([
+            'user_items.id  as  id',
+            'users.name  as  user_id',
+            'items.name  as  item_id',
+            'amount'
+        ])
+            ->join('users', 'users.id', '=', 'user_items.user_id')
+            ->join('items', 'items.id', '=', 'user_items.item_id')
+            ->get();
+
+
         //  ユーザーテーブルのすべてのレコードを取得
         $user = User::All();
         //  アイテムテーブルのすべてのレコードを取得
@@ -34,7 +46,8 @@ class UserItemController extends Controller
             [
                 'page' => $request["page"],
                 'columns' => $columns,
-                'accounts' => $accounts,
+                //'accounts' => $accounts,
+                'haveItems' => $haveItems,
                 'user' => $user,
                 'item' => $item
             ]);

@@ -19,6 +19,11 @@
         <input type="submit" value="管理ユーザー一覧へ"/>
         <input type="hidden" name="page" value="4"/>
     </form>
+    <form method="get" action="{{url('create')}}">
+        @csrf
+        <input type="submit" value="アイテム作成へ"/>
+        <input type="hidden" name="page" value="1"/>
+    </form>
     <form method="get" action="{{url('/')}}">
         @csrf
         <input type="submit" value="ログアウト"/>
