@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
         $this->call(UserItemsSeeder::class);
         $this->call(ClansSeeder::class);
         $this->call(UsersTableSeeder::class);
+        $this->call(UserDetailsTableSeeder::class);
         /*
          User::factory()->create([
             'name' => 'Test User',

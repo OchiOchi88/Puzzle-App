@@ -28,8 +28,9 @@ class AccountController extends Controller
 
         //  管理者情報テーブルのすべてのレコードを取得
         $accounts = Account::All();
+        //$accounts = Account::simplePaginate(10);
         return view('subject/list/infoIndex',
-            ['page' => $request["page"], 'columns' => $columns, 'accounts' => $accounts]);
+            ['page' => $request["page"], 'columns' => $columns, 'accounts' => $accounts, 'request' => csrf_token()]);
 
     }
 

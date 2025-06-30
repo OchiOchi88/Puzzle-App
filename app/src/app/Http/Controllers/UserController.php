@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\UserDetail;
 use Illuminate\Http\Request;
 
 use App\Models\Clan;
@@ -26,8 +27,28 @@ class UserController extends Controller
         $accounts = User::All();
         //  所属テーブルのすべてのレコードを取得
         $clans = Clan::All();
-        return view('subject/list/infoIndex',
-            ['page' => $request["page"], 'columns' => $columns, 'accounts' => $accounts, 'clans' => $clans]);
+        return view('subject/list/user',
+            [
+                'page' => $request["page"],
+                'columns' => $columns,
+                'accounts' => $accounts,
+                'clans' => $clans,
+                'request' => csrf_token()
+            ]);
 
+    }
+
+    public function userDetail(Request $request)
+    {
+        //  DB接続
+        //$pdo = new PDO("mysql:host=mysql;dbname=puzzle_db;", "jobi", "jobi");
+
+        $columns = UserDetail::All();
+        return view('subject/list/userDetail',
+            [
+                'page' => $request["page"],
+                'users' => $columns,
+                'request' => csrf_token()
+            ]);
     }
 }

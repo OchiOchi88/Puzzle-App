@@ -24,8 +24,8 @@ class ItemController extends Controller
 
         //  アイテムテーブルのすべてのレコードを取得
         $accounts = Item::All();
-        return view('subject/list/infoIndex',
-            ['page' => $request["page"], 'columns' => $columns, 'accounts' => $accounts]);
+        return view('subject/list/item',
+            ['page' => $request["page"], 'columns' => $columns, 'accounts' => $accounts, 'request' => csrf_token()]);
     }
 
     public function store(Request $request)
@@ -53,6 +53,7 @@ class ItemController extends Controller
             'value' => $request['value'],
             'text' => $request['text']
         ]);
+        //return redirect()->route('items.store', ['page' => 1, 'name' => $request['name']]);
         return view('CreateItem', ['page' => 1, 'name' => $request['name']]);
     }
 

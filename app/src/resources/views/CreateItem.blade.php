@@ -40,7 +40,7 @@
         <p>{{$error_id}}</p>
     @endif
     <div class="main">
-        <form method="post" action="{{url('store')}}">
+        <form method="post" action="{{url('items/store')}}">
             @csrf
             <input type="text" placeholder="アイテム名" name="name"/>
             <div class="radio">

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\CreateItemController;
+use App\Http\Middleware\AuthMiddleware;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ItemController;
@@ -31,3 +32,17 @@ Route::get('delete', [ItemController::class, 'delete']);
 Route::get('{error_id?}', [AuthController::class, 'index']);
 Route::post('login', [AuthController::class, 'login']);
 Route::get('logout', [AuthController::class, 'logout']);
+Route::get('items/create', [CreateItemController::class, 'create'])->name('items.create');
+Route::post('items/create', [CreateItemController::class, 'create'])->name('items.create');
+Route::post('items/store', [ItemController::class, 'store'])->name('items.store');
+
+Route::get('detail', [UserController::class, 'userDetail']);
+
+Route::post('logined', [AuthController::class, 'logined']);
+
+Route::prefix('items')->name('items.')->controller(ItemController::class)
+    ->middleware(AuthMiddleware::class)->group(function () {
+        //Route::get('index', 'index')->name('index'); // item.index
+        //Route::get('create', 'create')->name('create'); // item.create
+        Route::get('store', 'store')->name('store'); // item.store
+    });

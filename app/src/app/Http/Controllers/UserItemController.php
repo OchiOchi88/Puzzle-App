@@ -42,14 +42,15 @@ class UserItemController extends Controller
         //  アイテムテーブルのすべてのレコードを取得
         $item = Item::All();
         //dd($user, $item);
-        return view('subject/list/infoIndex',
+        return view('subject/list/userItem',
             [
                 'page' => $request["page"],
                 'columns' => $columns,
                 //'accounts' => $accounts,
                 'haveItems' => $haveItems,
-                'user' => $user,
-                'item' => $item
+                'users' => $user,
+                'item' => $item,
+                'request' => csrf_token()
             ]);
     }
 }

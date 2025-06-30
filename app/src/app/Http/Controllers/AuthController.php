@@ -27,7 +27,7 @@ class AuthController extends Controller
             return view('auth/index', ['error_id' => $error_id]);
         } else {
             if (Hash::check($password, $account->password)) {
-                return view('subject/list/index');
+                return view('subject/list/index', ['request' => csrf_token()]);
             } else {
                 $error_id = "入力された情報が違います！";
                 return view('auth/index', ['error_id' => $error_id]);
@@ -38,5 +38,10 @@ class AuthController extends Controller
     public function logout(Request $request)
     {
         return view('/');
+    }
+
+    public function logined(Request $request)
+    {
+        return view('subject/list/index', ['request' => csrf_token()]);
     }
 }

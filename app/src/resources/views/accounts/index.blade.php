@@ -24,6 +24,7 @@ $tabs = ['id', 'name', 'password'];
 </style>
 <body>
 <h1>■ユーザー一覧■</h1>
+{{$accounts->links()}}
 <div class="ul">
     @foreach($tabs as $tabName)
         <div class="li">
