@@ -35,6 +35,12 @@
         <input type="hidden" name="page" value="1"/>
         <input type="hidden" name="csrf" value="{{$request}}"/>
     </form>
+    <form method="get" action="{{url('stage')}}">
+        @csrf
+        <input type="submit" value="ステージ情報を表示する"/>
+        <input type="hidden" name="page" value="1"/>
+        <input type="hidden" name="csrf" value="{{$request}}"/>
+    </form>
     <form method="get" action="{{url('/')}}">
         @csrf
         <input type="submit" value="ログアウト"/>
