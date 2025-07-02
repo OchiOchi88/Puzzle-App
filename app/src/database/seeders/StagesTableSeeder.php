@@ -17,17 +17,20 @@ class StagesTableSeeder extends Seeder
         Stage::create([
             'name' => 'このゲームへようこそ！',
             'xLen' => 5,
-            'yLen' => 5
+            'yLen' => 5,
+            'cellCount' => 7
         ]);
         Stage::create([
             'name' => 'このゲームに慣れていこう',
             'xLen' => 7,
-            'yLen' => 7
+            'yLen' => 7,
+            'cellCount' => 9
         ]);
         Stage::create([
             'name' => 'ギミックに触れてみよう',
             'xLen' => 5,
-            'yLen' => 5
+            'yLen' => 5,
+            'cellCount' => 8
         ]);
     }
 }
