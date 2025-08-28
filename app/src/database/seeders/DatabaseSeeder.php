@@ -15,14 +15,20 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         //User::factory(10)->create();
-        $this->call(AccountsTableSeeder::class);
-        $this->call(ItemsSeeder::class);
-        $this->call(UserItemsSeeder::class);
-        $this->call(ClansSeeder::class);
-        $this->call(UsersTableSeeder::class);
-        $this->call(UserDetailsTableSeeder::class);
-        $this->call(StagesTableSeeder::class);
-        $this->call(StageCellsTableSeeder::class);
+        //$this->call(AccountsTableSeeder::class);
+        //$this->call(ItemsSeeder::class);
+        //$this->call(UserItemsSeeder::class);
+        //$this->call(ClansSeeder::class);
+        //$this->call(UsersTableSeeder::class);
+        //$this->call(UserDetailsTableSeeder::class);
+        //$this->call(StagesTableSeeder::class);
+        //$this->call(StageCellsTableSeeder::class);
+        $this->call(ElementsSeeder::class);
+        $this->call(StagesSeeder::class);
+        $this->call(UsersSeeder::class);
+        $this->call(PalettesSeeder::class);
+        $this->call(TilesSeeder::class);
+        $this->call(AchievementsSeeder::class);
         /*
          User::factory()->create([
             'name' => 'Test User',

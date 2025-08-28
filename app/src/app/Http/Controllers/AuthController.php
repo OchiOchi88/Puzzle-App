@@ -8,6 +8,11 @@ use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
+    public function home(Request $request)
+    {
+        return view('puzzle/home', ['request' => csrf_token()]);
+    }
+
     public function index(Request $request)
     {
         return view('auth/index', ['error' => $request->error_id]);

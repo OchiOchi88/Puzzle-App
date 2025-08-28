@@ -2,13 +2,19 @@
 
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\CreateItemController;
-use App\Http\Controllers\StageController;
 use App\Http\Middleware\AuthMiddleware;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ItemController;
-use App\Http\Controllers\UserController;
 use App\Http\Controllers\UserItemController;
+
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\StageController;
+use App\Http\Controllers\TileController;
+use App\Http\Controllers\ElementController;
+use App\Http\Controllers\PaletteController;
+use App\Http\Controllers\AchievementController;
+use App\Http\Controllers\UserAchievementController;
 
 //Route::get('/', function () {
 //    return view('welcome');
@@ -20,7 +26,7 @@ use App\Http\Controllers\UserItemController;
 //Route::get('userIndex', [AccountController::class, 'userIndex']);
 //Route::get('scoreIndex', [AccountController::class, 'scoreIndex']);
 Route::get('index', [AccountController::class, 'index']);
-Route::get('user', [UserController::class, 'user']);
+
 Route::get('item', [ItemController::class, 'item']);
 Route::get('userItem', [UserItemController::class, 'userItem']);
 Route::post('store', [ItemController::class, 'store']);
@@ -37,9 +43,6 @@ Route::get('items/create', [CreateItemController::class, 'create'])->name('items
 Route::post('items/create', [CreateItemController::class, 'create'])->name('items.create');
 Route::post('items/store', [ItemController::class, 'store'])->name('items.store');
 
-Route::get('detail', [UserController::class, 'userDetail']);
-
-Route::post('logined', [AuthController::class, 'logined']);
 
 Route::prefix('items')->name('items.')->controller(ItemController::class)
     ->middleware(AuthMiddleware::class)->group(function () {
@@ -47,5 +50,20 @@ Route::prefix('items')->name('items.')->controller(ItemController::class)
         //Route::get('create', 'create')->name('create'); // item.create
         Route::get('store', 'store')->name('store'); // item.store
     });
+Route::post('logined', [AuthController::class, 'logined']);
 
-Route::get('stage', [StageController::class, 'index']);
+Route::post('puzzle/home', [AuthController::class, 'home']);
+Route::get('users', [UserController::class, 'index']);
+Route::get('users/detail', [UserController::class, 'userDetail']);
+Route::get('stages', [StageController::class, 'index']);
+Route::get('tiles', [TileController::class, 'index']);
+Route::get('elements', [ElementController::class, 'index']);
+Route::get('palettes', [PaletteController::class, 'index']);
+Route::get('achievements', [AchievementController::class, 'index']);
+Route::get('userAchievements', [UserAchievementController::class, 'index']);
+// ユーザー登録
+Route::post('users/store', [UserController::class, 'store'])->name('user.store');
+
+// ユーザー情報更新
+Route::post('users/update', [UserController::class, 'update'])
+    ->middleware('auth:sanctum')->name('users.update');

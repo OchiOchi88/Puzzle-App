@@ -25,14 +25,12 @@ class UserController extends Controller
 
         //  ユーザーテーブルのすべてのレコードを取得
         $accounts = User::All();
-        //  所属テーブルのすべてのレコードを取得
-        $clans = Clan::All();
-        return view('subject/list/user',
+        return view('users',
             [
-                'page' => $request["page"],
-                'columns' => $columns,
-                'accounts' => $accounts,
-                'clans' => $clans,
+                'id' => $accounts["id"],
+                'stage' => $accounts["stage"],
+                'achievement' => $accounts["achievement"],
+                'name' => $accounts["name"],
                 'request' => csrf_token()
             ]);
 
@@ -50,5 +48,27 @@ class UserController extends Controller
                 'users' => $columns,
                 'request' => csrf_token()
             ]);
+    }
+
+    public function index(Request $request)
+    {
+        //  DB接続
+        $pdo = new PDO("mysql:host=mysql;dbname=puzzle_db;", "jobi", "jobi");
+
+        //  ユーザーテーブルのカラム名を取得するSQL
+        $sql = 'show columns from users';
+        //  $sthを使って$sqlのSQL文を実行する(第一段階)
+        $sth = $pdo->query($sql);
+        //  $columnsに$sthの実行結果を取得させる(第二段階)
+        $responses = $sth->fetchAll(PDO::FETCH_COLUMN);
+
+        //  モデル取得
+        $records = User::All();
+        //dd($responses);
+        return view('puzzle/users', [
+            'responses' => $responses,
+            'records' => $records,
+            'request' => csrf_token()
+        ]);
     }
 }

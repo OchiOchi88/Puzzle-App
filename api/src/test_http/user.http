@@ -1,0 +1,114 @@
+### ユーザー情報取得
+GET http://localhost:8000/api/users/1
+Accept: application/json
+
+###
+
+### ユーザー一覧取得
+GET http://localhost:8000/api/users
+Accept: application/json
+
+###
+
+### ユーザー一覧取得
+GET http://localhost:8000/api/users/index?name=tester
+Accept: application/json
+
+###
+
+### ユーザー登録
+POST http://localhost:8000/api/users/store
+Content-Type: application/json
+Accept: application/json
+
+{
+    "name": "jobi",
+    "lvl": 1,
+    "exp": 0,
+    "clan": 0
+}
+
+###
+
+### ユーザー更新
+POST http://localhost:8000/api/users/update
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 1|JtpcZPbUoAxofjNnSsjrnXVkavqNrgmxBWYmc8aQbbc04873
+
+{
+    "name": "Karla_Flain",
+    "lvl": 2,
+    "exp": 1,
+    "clan": 0
+}
+
+###
+
+### ユーザー登録
+POST http://localhost:8000/api/users/store
+Content-Type: application/json
+Accept: application/json
+
+{
+    "name": "jobi",
+    "stage": 0,
+    "achievement": 0
+}
+
+###
+### ユーザー情報更新
+POST http://localhost:8000/api/users/update
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 1|iqdxe5eZoIqF8OdkdS2BxJCpTBuTZHNmdMTFf2R400d1f577
+
+{
+    "name": "testUser",
+    "stage": 9,
+    "achievement": 5
+}
+
+###
+
+### ユーザー情報更新(2人目)
+POST http://localhost:8000/api/users/update
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 2|CPWt7IIOXmgctTQ2ts5wBcmgYBdtRLbA7NUvI5n5fa9d27e8
+
+{
+    "id": 2,
+    "name": "tester",
+    "stage": 10,
+    "achievement": 10
+}
+
+###
+
+### ユーザー情報取得
+POST http://localhost:8000/api/users/index
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 1|iqdxe5eZoIqF8OdkdS2BxJCpTBuTZHNmdMTFf2R400d1f577
+
+###
+
+### ステージ情報取得
+GET http://localhost:8000/api/stages/get/1
+Content-Type: application/json
+Accept: application/json
+
+###
+### 元素情報取得
+GET http://localhost:8000/api/elements/get/1
+Content-Type: application/json
+Accept: application/json
+
+###
+### パレット情報取得
+GET http://localhost:8000/api/palettes/get/1
+Content-Type: application/json
+Accept: application/json
+
+###

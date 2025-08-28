@@ -12,10 +12,8 @@ return new class extends Migration {
     {
         Schema::create('stages', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 255);
-            $table->integer('xLen');
-            $table->integer('yLen');
-            $table->integer('cellCount');
+            $table->integer('level');
+            $table->string('name');
             $table->timestamps();
         });
     }
@@ -25,6 +23,6 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('stages');
+        //
     }
 };
