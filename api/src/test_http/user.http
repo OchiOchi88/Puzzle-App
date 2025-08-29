@@ -98,6 +98,12 @@ Content-Type: application/json
 Accept: application/json
 
 ###
+### タイル情報取得
+GET http://localhost:8000/api/tiles/get/1
+Content-Type: application/json
+Accept: application/json
+
+###
 ### 元素情報取得
 GET http://localhost:8000/api/elements/get/1
 Content-Type: application/json

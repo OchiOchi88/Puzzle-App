@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Stage;
+use App\Models\Tile;
+use App\Models\Element;
+use App\Models\Palette;
 use PDO;
 
 class stageController extends Controller
@@ -33,10 +36,17 @@ class stageController extends Controller
     {
 
 
-        $cells = Stage::where('stage', '=', $request->stage_id)->get();
+        $stages = Stage::where('level', '=', $request->stage_id)->get();
+        $tiles = Tile::Where('stage', '=', $request->stage_id)->get();
+        $elements = Element::Where('stage', '=', $request->stage_id)->get();
+        $palettes = Palette::Where('stage', '=', $request->stage_id)->get();
+        //dd($cells, $tiles, $elements, $palettes);
 
-        //dd($stage);
-
-        return response()->json($cells);
+        return response()->json([
+            $stages,
+            $tiles,
+            $elements,
+            $palettes
+        ]);
     }
 }

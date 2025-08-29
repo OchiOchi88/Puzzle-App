@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\userController;
 use App\Http\Controllers\stageController;
+use App\Http\Controllers\tileController;
 use App\Http\Controllers\elementController;
 use App\Http\Controllers\paletteController;
 use App\Http\Controllers\userDetailController;
@@ -58,6 +59,9 @@ Route::post('users/index', [userController::class, 'index'])
 // ステージ情報取得
 Route::get('stages/get/{stage_id}', [stageController::class, 'get'])
     ->name('stages.get');
+// タイル情報取得
+Route::get('tiles/get/{stage_id}', [tileController::class, 'get'])
+    ->name('tiles.get');
 // 元素情報取得
 Route::get('elements/get/{element_id}', [elementController::class, 'get'])
     ->name('elements.get');
