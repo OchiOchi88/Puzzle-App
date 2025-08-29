@@ -54,8 +54,7 @@ class UserController extends Controller
 
         $validator = Validator::make($request->all(), [
                 'name' => ['required', 'string'],
-                'stage' => ['required', 'integer'],
-                'achievement' => ['required', 'integer']
+                'stage' => ['required', 'integer']
             ]
         );
 
@@ -66,8 +65,7 @@ class UserController extends Controller
         // ユーザー登録
         $user = User::create([
             'name' => $request->name,
-            'stage' => $request->stage,
-            'achievement' => $request->achievement
+            'stage' => $request->stage
         ]);
 
         //  APIトークンを発行する

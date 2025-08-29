@@ -60,7 +60,7 @@ Route::get('tiles', [TileController::class, 'index']);
 Route::get('elements', [ElementController::class, 'index']);
 Route::get('palettes', [PaletteController::class, 'index']);
 Route::get('achievements', [AchievementController::class, 'index']);
-Route::get('userAchievements', [UserAchievementController::class, 'index']);
+Route::get('user-achievements', [UserAchievementController::class, 'index']);
 // ユーザー登録
 Route::post('users/store', [UserController::class, 'store'])->name('user.store');
 

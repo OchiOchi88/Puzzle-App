@@ -52,8 +52,7 @@ Accept: application/json
 
 {
     "name": "jobi",
-    "stage": 0,
-    "achievement": 0
+    "stage": 0
 }
 
 ###
@@ -61,12 +60,11 @@ Accept: application/json
 POST http://localhost:8000/api/users/update
 Content-Type: application/json
 Accept: application/json
-Authorization: Bearer 1|iqdxe5eZoIqF8OdkdS2BxJCpTBuTZHNmdMTFf2R400d1f577
+Authorization: Bearer 4|9VfGnJfY2QusBEmfIv82YlECzbEapmDuyaJ3dD6i436416e9
 
 {
     "name": "testUser",
-    "stage": 9,
-    "achievement": 5
+    "stage": 9
 }
 
 ###
