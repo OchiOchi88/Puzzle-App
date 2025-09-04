@@ -29,6 +29,8 @@ class DatabaseSeeder extends Seeder
         $this->call(PalettesSeeder::class);
         $this->call(TilesSeeder::class);
         $this->call(AchievementsSeeder::class);
+        $this->call(AuthUsersSeeder::class);
+        $this->call(UserAchievementsSeeder::class);
         /*
          User::factory()->create([
             'name' => 'Test User',

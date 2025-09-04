@@ -68,7 +68,7 @@ class UserController extends Controller
         return view('puzzle/users', [
             'responses' => $responses,
             'records' => $records,
-            'request' => csrf_token()
+            'request' => $request
         ]);
     }
 }

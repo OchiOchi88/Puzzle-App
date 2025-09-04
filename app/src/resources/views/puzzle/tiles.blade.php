@@ -63,7 +63,7 @@
     </div>
 </div>
 
-<form method="post" action="{{url('puzzle/home')}}">
+<form method="post" action="{{url('home')}}">
     @csrf
     <input type="submit" value="ホームに戻る"/>
     <input type="hidden" name="csrf" value="{{$request}}"/>

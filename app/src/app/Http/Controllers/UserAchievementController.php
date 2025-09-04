@@ -26,7 +26,7 @@ class UserAchievementController extends Controller
         return view('puzzle/userAchievements', [
             'responses' => $responses,
             'records' => $records,
-            'request' => csrf_token()
+            'request' => $request
         ]);
     }
 }

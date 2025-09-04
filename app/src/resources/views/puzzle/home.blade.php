@@ -35,7 +35,7 @@
         <input type="hidden" name="page" value="6"/>
         <input type="hidden" name="csrf" value="{{$request}}"/>
     </form>
-    <form method="get" action="{{url('userAchievements')}}">
+    <form method="get" action="{{url('user-achievements')}}">
         @csrf
         <input type="submit" value="ユーザー実績一覧へ"/>
         <input type="hidden" name="page" value="7"/>

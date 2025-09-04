@@ -26,7 +26,7 @@ class StageController extends Controller
         return view('puzzle/stages', [
             'responses' => $responses,
             'records' => $records,
-            'request' => csrf_token()
+            'request' => $request
         ]);
     }
 

@@ -47,6 +47,7 @@
     <div class="ul">
         @foreach($responses as $response)
             @if($response == "created_at" || $response == "updated_at")
+
                     <?php continue ?>
             @endif
             <div class="li">
@@ -63,7 +64,25 @@
     </div>
 </div>
 
-<form method="post" action="{{url('puzzle/home')}}">
+<form method="post" action="{{url('achievements/store')}}">
+    @csrf
+    <input type="submit" value="実績登録"/>
+    <input type="hidden" name="first_access" value="1"/>
+    <input type="hidden" name="csrf" value="{{$request}}"/>
+</form>
+<form method="post" action="{{url('achievements/update')}}">
+    @csrf
+    <input type="submit" value="実績更新"/>
+    <input type="hidden" name="first_access" value="1"/>
+    <input type="hidden" name="csrf" value="{{$request}}"/>
+</form>
+<form method="post" action="{{url('achievements/delete')}}">
+    @csrf
+    <input type="submit" value="実績削除"/>
+    <input type="hidden" name="first_access" value="1"/>
+    <input type="hidden" name="csrf" value="{{$request}}"/>
+</form>
+<form method="post" action="{{url('home')}}">
     @csrf
     <input type="submit" value="ホームに戻る"/>
     <input type="hidden" name="csrf" value="{{$request}}"/>

@@ -26,7 +26,7 @@ class TileController extends Controller
         return view('puzzle/tiles', [
             'responses' => $responses,
             'records' => $records,
-            'request' => csrf_token()
+            'request' => $request
         ]);
     }
 }

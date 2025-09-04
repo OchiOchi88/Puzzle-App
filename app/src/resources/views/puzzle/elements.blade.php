@@ -62,8 +62,25 @@
         @endforeach
     </div>
 </div>
-
-<form method="post" action="{{url('puzzle/home')}}">
+<form method="post" action="{{url('elements/store')}}">
+    @csrf
+    <input type="submit" value="元素登録"/>
+    <input type="hidden" name="first_access" value="1"/>
+    <input type="hidden" name="csrf" value="{{$request}}"/>
+</form>
+<form method="post" action="{{url('elements/update')}}">
+    @csrf
+    <input type="submit" value="元素更新"/>
+    <input type="hidden" name="first_access" value="1"/>
+    <input type="hidden" name="csrf" value="{{$request}}"/>
+</form>
+<form method="post" action="{{url('elements/delete')}}">
+    @csrf
+    <input type="submit" value="元素削除"/>
+    <input type="hidden" name="first_access" value="1"/>
+    <input type="hidden" name="csrf" value="{{$request}}"/>
+</form>
+<form method="post" action="{{url('home')}}">
     @csrf
     <input type="submit" value="ホームに戻る"/>
     <input type="hidden" name="csrf" value="{{$request}}"/>

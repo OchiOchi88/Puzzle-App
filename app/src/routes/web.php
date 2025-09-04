@@ -52,7 +52,9 @@ Route::prefix('items')->name('items.')->controller(ItemController::class)
     });
 Route::post('logined', [AuthController::class, 'logined']);
 
-Route::post('puzzle/home', [AuthController::class, 'home']);
+Route::get('login', [AuthController::class, 'toLogin']);
+Route::post('login', [AuthController::class, 'login']);
+Route::post('home', [AuthController::class, 'home']);
 Route::get('users', [UserController::class, 'index']);
 Route::get('users/detail', [UserController::class, 'userDetail']);
 Route::get('stages', [StageController::class, 'index']);
@@ -61,6 +63,12 @@ Route::get('elements', [ElementController::class, 'index']);
 Route::get('palettes', [PaletteController::class, 'index']);
 Route::get('achievements', [AchievementController::class, 'index']);
 Route::get('user-achievements', [UserAchievementController::class, 'index']);
+Route::post('achievements/store', [AchievementController::class, 'store']);
+Route::post('achievements/update', [AchievementController::class, 'update']);
+Route::post('achievements/delete', [AchievementController::class, 'delete']);
+Route::post('elements/store', [ElementController::class, 'store']);
+Route::post('elements/update', [ElementController::class, 'update']);
+Route::post('elements/delete', [ElementController::class, 'delete']);
 // ユーザー登録
 Route::post('users/store', [UserController::class, 'store'])->name('user.store');
 

@@ -26,7 +26,7 @@ class PaletteController extends Controller
         return view('puzzle/palettes', [
             'responses' => $responses,
             'records' => $records,
-            'request' => csrf_token()
+            'request' => $request
         ]);
     }
 }
