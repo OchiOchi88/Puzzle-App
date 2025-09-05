@@ -8,7 +8,7 @@ use PDO;
 
 class ElementController extends Controller
 {
-    public function index(Request $request)
+    public function index()
     {
         //  DB接続
         $pdo = new PDO("mysql:host=mysql;dbname=puzzle_db;", "jobi", "jobi");
@@ -26,7 +26,7 @@ class ElementController extends Controller
         return view('puzzle/elements', [
             'responses' => $responses,
             'records' => $records,
-            'request' => $request
+            'request' => csrf_token()
         ]);
     }
 
@@ -72,6 +72,15 @@ class ElementController extends Controller
             $error_id = "方向には数字を入れてください！";
             return view('puzzle/store/elements', ['error_id' => $error_id, 'request' => $request]);
         }
+        if (!empty($request['type'])) {
+            if ($request['type'] < 1 ||
+                $request['type'] > 4) {
+                if ($request['type'] != 99) {
+                    $error_id = "元素の方向が範囲外です！";
+                    return view('puzzle/update/elements', ['error_id' => $error_id, 'request' => $request]);
+                }
+            }
+        }
         $validate = Element::All();
         foreach ($validate as $validateData) {
             if ($request['stage'] === $validateData['stage'] &&
@@ -80,6 +89,9 @@ class ElementController extends Controller
                 $error_id = "そのステージのまったく同じ座標に元素が既に存在します！";
                 return view('puzzle/store/elements', ['error_id' => $error_id, 'request' => $request]);
             }
+        }
+        if ($request['type'] == 99) {
+            $request['type'] = 0;
         }
         //  レコードを追加(insert)
         Element::create([
@@ -109,42 +121,53 @@ class ElementController extends Controller
 
     public function update(Request $request)
     {
-        $score = 0;
         if (isset($request['first_access'])) {
             return view('puzzle/update/elements', ['request' => $request]);
         }
-        $number = Element::where('achieve_number', '=', $request['achieve_number'])->first();
-        if (empty($number)) {
-            $error_id = "その実績番号は存在しません！";
+        $assignment = Element::where('id', '=', $request['id'])->first();
+        if (empty($assignment)) {
+            $error_id = "そのIDの元素は存在しません！";
             return view('puzzle/update/elements', ['error_id' => $error_id, 'request' => $request]);
         }
-        $name = Element::where('name', '=', $request['name'])->first();
-        if (isset($name)) {
-            $error_id = "その実績はすでに存在します！";
-            return view('puzzle/update/elements', ['error_id' => $error_id, 'request' => $request]);
+        if (!empty($request['type'])) {
+            if ($request['type'] < 1 ||
+                $request['type'] > 4) {
+                if ($request['type'] != 99) {
+                    $error_id = "元素の方向が範囲外です！";
+                    return view('puzzle/update/elements', ['error_id' => $error_id, 'request' => $request]);
+                }
+            }
         }
-        $assignment = Element::where('achieve_number', '=', $request['achieve_number'])->first();
-        if (empty($request['name'])) {
-            $request['name'] = $assignment['name'];
-        }
-        if (empty($request['detail'])) {
-            $request['detail'] = $assignment['detail'];
-        }
-        if (empty($request['score'])) {
-            $request['score'] = $assignment['score'];
-        } else {
-            //dd($request['score']);
-            $score = intval($request['score']);
-            if (empty($score)) {
-                $error_id = "スコアには数字を入れてください！";
+        $validates = Element::All();
+        foreach ($validates as $validate) {
+            if ($validate['stage'] == $request['stage'] &&
+                $validate['x'] == $request['x'] &&
+                $validate['y'] == $request['y']) {
+                $error_id = "変更先の座標に既に元素が存在します！";
                 return view('puzzle/update/elements', ['error_id' => $error_id, 'request' => $request]);
             }
         }
+        if (empty($request['stage'])) {
+            $request['stage'] = $assignment['stage'];
+        }
+        if (empty($request['x'])) {
+            $request['x'] = $assignment['x'];
+        }
+        if (empty($request['y'])) {
+            $request['y'] = $assignment['y'];
+        }
+        if (empty($request['type'])) {
+            $request['type'] = $assignment['type'];
+        }
+        if ($request['type'] == 99) {
+            $request['type'] = 0;
+        }
         //dd($request);
-        Element::where('achieve_number', $request->achieve_number)->update([
-            'name' => $request['name'],
-            'detail' => $request['detail'],
-            'score' => $request['score']
+        Element::where('id', $request->id)->update([
+            'stage' => $request['stage'],
+            'x' => $request['x'],
+            'y' => $request['y'],
+            'type' => $request['type']
         ]);
         //  DB接続
         $pdo = new PDO("mysql:host=mysql;dbname=puzzle_db;", "jobi", "jobi");
@@ -170,13 +193,13 @@ class ElementController extends Controller
         if (isset($request['first_access'])) {
             return view('puzzle/delete/elements', ['request' => $request]);
         }
-        if (empty($request['achieve_number'])) {
-            $error_id = "実績番号が入力されていません！";
+        if (empty($request['id'])) {
+            $error_id = "元素IDが入力されていません！";
             return view('puzzle/delete/elements', ['error_id' => $error_id, 'request' => $request]);
         }
-        $number = Element::where('achieve_number', $request->achieve_number)->first();
+        $number = Element::where('id', $request->id)->first();
         if (empty($number)) {
-            $error_id = "その実績番号は存在しません！";
+            $error_id = "そのIDの元素は存在しません！";
             return view('puzzle/delete/elements', ['error_id' => $error_id, 'request' => $request]);
         }
         //dd($number);

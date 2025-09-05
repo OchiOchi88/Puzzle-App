@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TestController;
 use App\Http\Controllers\userController;
 use App\Http\Controllers\stageController;
 use App\Http\Controllers\tileController;
@@ -68,3 +69,5 @@ Route::get('elements/get/{element_id}', [elementController::class, 'get'])
 // パレット情報取得
 Route::get('palettes/get/{palette_id}', [paletteController::class, 'get'])
     ->name('palettes.get');
+
+Route::get('tests', [TestController::class, 'test']);

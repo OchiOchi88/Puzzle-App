@@ -20,7 +20,8 @@ services:
 
   # WedAPIサーバーコンテナ
   api:
-    build: ./app  # Dockerfileでビルド
+    build: ./api  # Dockerfileでビルド
+    image: puzzle-api
     volumes:
       - ./api/src/:/var/www/                          # Laravelディレクトリ
     ports:

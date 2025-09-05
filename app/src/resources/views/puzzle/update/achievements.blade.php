@@ -15,13 +15,23 @@
     <input type="hidden" name="csrf" value="{{$request}}"/>
     <input type="submit" value="更新"/>
 </form>
-<form method="get" action="{{url('achievements')}}">
+
+<a href="#" onclick="event.preventDefault(); document.getElementById('achieve-form').submit();">
+    実績表示に戻る
+</a>
+<form id="achieve-form" method="get" action="{{ url('achievements') }}" style="display:none;">
     @csrf
-    <input type="submit" value="実績表示に戻る"/>
-    <input type="hidden" name="csrf" value="{{$request}}"/>
+    <input type="hidden" name="first_access" value="1">
+    <input type="hidden" name="csrf" value="{{ $request }}">
 </form>
-<form method="post" action="{{url('home')}}">
+<br>
+
+<a href="#" onclick="event.preventDefault(); document.getElementById('home-form').submit();">
+    ホームに戻る
+</a>
+<form id="home-form" method="post" action="{{ url('home') }}" style="display:none;">
     @csrf
-    <input type="submit" value="ホームに戻る"/>
-    <input type="hidden" name="csrf" value="{{$request}}"/>
+    <input type="hidden" name="first_access" value="1">
+    <input type="hidden" name="csrf" value="{{ $request }}">
 </form>
+<br>

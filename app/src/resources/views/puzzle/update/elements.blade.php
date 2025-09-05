@@ -13,7 +13,7 @@
     <p>y座標(空欄で変更なし)</p>
     <input type="number" name="y"/>
     <p>方向(空欄で変更なし)</p>
-    <p>1:上 2:右 3:下 4:左 0:ゴール</p>
+    <p>1:上 2:右 3:下 4:左 99:ゴール(表記は0)</p>
     <input type="number" name="type"/>
     <input type="hidden" name="csrf" value="{{$request}}"/>
     <input type="submit" value="更新"/>

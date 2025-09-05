@@ -116,3 +116,10 @@ Content-Type: application/json
 Accept: application/json
 
 ###
+
+### パレット情報取得
+GET http://localhost:8000/api/tests
+Content-Type: application/json
+Accept: application/json
+
+###

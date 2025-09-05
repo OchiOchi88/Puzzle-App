@@ -8,7 +8,7 @@ use PDO;
 
 class AchievementController extends Controller
 {
-    public function index(Request $request)
+    public function index()
     {
         //  DB接続
         $pdo = new PDO("mysql:host=mysql;dbname=puzzle_db;", "jobi", "jobi");

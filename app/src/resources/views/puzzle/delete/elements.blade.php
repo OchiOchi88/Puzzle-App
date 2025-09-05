@@ -9,13 +9,20 @@
     <input type="hidden" name="csrf" value="{{$request}}"/>
     <input type="submit" value="登録"/>
 </form>
-<form method="get" action="{{url('elements')}}">
+
+<a href="#" onclick="event.preventDefault(); document.getElementById('elements-form').submit();">
+    元素表示に戻る
+</a>
+<form id="elements-form" method="get" action="{{ url('elements') }}" style="display:none;">
     @csrf
-    <input type="submit" value="元素表示に戻る"/>
-    <input type="hidden" name="csrf" value="{{$request}}"/>
+    <input type="hidden" name="csrf" value="{{ $request }}">
 </form>
-<form method="post" action="{{url('home')}}">
+<br>
+<a href="#" onclick="event.preventDefault(); document.getElementById('home-form').submit();">
+    ホームに戻る
+</a>
+<form id="home-form" method="post" action="{{ url('home') }}" style="display:none;">
     @csrf
-    <input type="submit" value="ホームに戻る"/>
-    <input type="hidden" name="csrf" value="{{$request}}"/>
+    <input type="hidden" name="csrf" value="{{ $request }}">
 </form>
+<br>

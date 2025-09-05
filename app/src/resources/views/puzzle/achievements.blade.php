@@ -64,28 +64,39 @@
     </div>
 </div>
 
-<form method="post" action="{{url('achievements/store')}}">
+<a href="#" onclick="event.preventDefault(); document.getElementById('store-form').submit();">
+    実績登録
+</a>
+
+<form id="store-form" method="post" action="{{ url('achievements/store') }}" style="display:none;">
     @csrf
-    <input type="submit" value="実績登録"/>
-    <input type="hidden" name="first_access" value="1"/>
-    <input type="hidden" name="csrf" value="{{$request}}"/>
+    <input type="hidden" name="first_access" value="1">
+    <input type="hidden" name="csrf" value="{{ $request }}">
 </form>
-<form method="post" action="{{url('achievements/update')}}">
+<br>
+<a href="#" onclick="event.preventDefault(); document.getElementById('update-form').submit();">
+    実績更新
+</a>
+<form id="update-form" method="post" action="{{ url('achievements/update') }}" style="display:none;">
     @csrf
-    <input type="submit" value="実績更新"/>
-    <input type="hidden" name="first_access" value="1"/>
-    <input type="hidden" name="csrf" value="{{$request}}"/>
+    <input type="hidden" name="first_access" value="1">
+    <input type="hidden" name="csrf" value="{{ $request }}">
 </form>
-<form method="post" action="{{url('achievements/delete')}}">
+<br>
+
+<a href="#" onclick="event.preventDefault(); document.getElementById('delete-form').submit();">
+    実績削除
+</a>
+<form id="delete-form" method="post" action="{{ url('achievements/delete') }}" style="display:none;">
     @csrf
-    <input type="submit" value="実績削除"/>
-    <input type="hidden" name="first_access" value="1"/>
-    <input type="hidden" name="csrf" value="{{$request}}"/>
+    <input type="hidden" name="first_access" value="1">
+    <input type="hidden" name="csrf" value="{{ $request }}">
 </form>
-<form method="post" action="{{url('home')}}">
+<br>
+<a href="#" onclick="event.preventDefault(); document.getElementById('home-form').submit();">
+    ホームに戻る
+</a>
+<form id="home-form" method="post" action="{{ url('home') }}" style="display:none;">
     @csrf
-    <input type="submit" value="ホームに戻る"/>
-    <input type="hidden" name="csrf" value="{{$request}}"/>
+    <input type="hidden" name="csrf" value="{{ $request }}">
 </form>
-</body>
-</html>

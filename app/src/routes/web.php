@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\CreateItemController;
+use App\Http\Controllers\TestController;
 use App\Http\Middleware\AuthMiddleware;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
@@ -51,6 +52,8 @@ Route::prefix('items')->name('items.')->controller(ItemController::class)
         Route::get('store', 'store')->name('store'); // item.store
     });
 Route::post('logined', [AuthController::class, 'logined']);
+
+Route::get('test', [TestController::class, 'tests']);
 
 Route::get('login', [AuthController::class, 'toLogin']);
 Route::post('login', [AuthController::class, 'login']);
