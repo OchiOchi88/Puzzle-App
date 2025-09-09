@@ -1,4 +1,4 @@
-<h1>実績追加</h1>
+<h1>実績削除</h1>
 @if(isset($error_id))
     <p>{{$error_id}}</p>
 @endif

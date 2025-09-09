@@ -1,3 +1,29 @@
-<div>
-    <!-- Knowing is not enough; we must apply. Being willing is not enough; we must do. - Leonardo da Vinci -->
-</div>
+<h1>パレット削除</h1>
+@if(isset($error_id))
+    <p>{{$error_id}}</p>
+@endif
+<form method="post" action="{{url('palettes/delete')}}">
+    @csrf
+    <p>パレットID</p>
+    <input type="number" name="id"/>
+    <input type="hidden" name="csrf" value="{{$request}}"/>
+    <input type="submit" value="削除"/>
+</form>
+
+<a href="#" onclick="event.preventDefault(); document.getElementById('palette-form').submit();">
+    パレット表示に戻る
+</a>
+<form id="palette-form" method="get" action="{{ url('palettes') }}" style="display:none;">
+    @csrf
+    <input type="hidden" name="csrf" value="{{ $request }}">
+</form>
+<br>
+
+<a href="#" onclick="event.preventDefault(); document.getElementById('home-form').submit();">
+    ホームに戻る
+</a>
+<form id="home-form" method="post" action="{{ url('home') }}" style="display:none;">
+    @csrf
+    <input type="hidden" name="csrf" value="{{ $request }}">
+</form>
+<br>

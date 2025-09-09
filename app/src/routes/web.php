@@ -72,6 +72,8 @@ Route::post('achievements/delete', [AchievementController::class, 'delete']);
 Route::post('elements/store', [ElementController::class, 'store']);
 Route::post('elements/update', [ElementController::class, 'update']);
 Route::post('elements/delete', [ElementController::class, 'delete']);
+Route::post('palettes/store', [PaletteController::class, 'store']);
+Route::post('palettes/delete', [PaletteController::class, 'delete']);
 // ユーザー登録
 Route::post('users/store', [UserController::class, 'store'])->name('user.store');
 

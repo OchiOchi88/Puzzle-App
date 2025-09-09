@@ -1,4 +1,4 @@
-<h1>元素登録</h1>
+<h1>元素削除</h1>
 @if(isset($error_id))
     <p>{{$error_id}}</p>
 @endif

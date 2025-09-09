@@ -63,10 +63,34 @@
     </div>
 </div>
 
-<form method="post" action="{{url('home')}}">
+
+<a href="#" onclick="event.preventDefault(); document.getElementById('store-form').submit();">
+    パレット登録
+</a>
+
+<form id="store-form" method="post" action="{{ url('palettes/store') }}" style="display:none;">
     @csrf
-    <input type="submit" value="ホームに戻る"/>
-    <input type="hidden" name="csrf" value="{{$request}}"/>
+    <input type="hidden" name="first_access" value="1">
+    <input type="hidden" name="csrf" value="{{ $request }}">
+</form>
+<br>
+
+<a href="#" onclick="event.preventDefault(); document.getElementById('delete-form').submit();">
+    パレット削除
+</a>
+
+<form id="delete-form" method="post" action="{{ url('palettes/delete') }}" style="display:none;">
+    @csrf
+    <input type="hidden" name="first_access" value="1">
+    <input type="hidden" name="csrf" value="{{ $request }}">
+</form>
+<br>
+<a href="#" onclick="event.preventDefault(); document.getElementById('home-form').submit();">
+    ホームに戻る
+</a>
+<form id="home-form" method="post" action="{{ url('home') }}" style="display:none;">
+    @csrf
+    <input type="hidden" name="csrf" value="{{ $request }}">
 </form>
 </body>
 </html>
