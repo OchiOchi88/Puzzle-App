@@ -19,6 +19,14 @@ class stageController extends Controller
         return response()->json($response);*/
     }
 
+    public function count()
+    {
+        $count = Stage::All()->count();
+        return response()->json(
+            $count
+        );
+    }
+
     /*
         public function get($id)
         {

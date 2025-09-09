@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\UserResource;
 use Illuminate\Http\Request;
 use App\Models\UserDetail;
 
 use App\Models\User;
 use Illuminate\Support\Facades\Validator;
 use PDO;
+use function Sodium\increment;
 
 class UserController extends Controller
 {
@@ -92,8 +94,7 @@ class UserController extends Controller
         $user = User::findOrFail($request->user()->id);
         $user->fill([
             'name' => $request->name,
-            'stage' => $request->stage,
-            'achievement' => $request->achievement
+            'stage' => $request->stage
         ]);
         $user->save();
 
@@ -110,5 +111,12 @@ class UserController extends Controller
             'achievement' => $response->achievement,
             'name' => $response->name
         ]);
+    }
+
+    public function levelUp(Request $request)
+    {
+        $user = User::findOrFail($request->user()->id);
+        $user['stage'] = increment();
+        return response()->json(UserResource::make($user));
     }
 }

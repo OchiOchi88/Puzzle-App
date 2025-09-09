@@ -90,6 +90,12 @@ class ElementController extends Controller
                 return view('puzzle/store/elements', ['error_id' => $error_id, 'request' => $request]);
             }
         }
+        if ($request['x'] == 99) {
+            $request['x'] = 0;
+        }
+        if ($request['y'] == 99) {
+            $request['y'] = 0;
+        }
         if ($request['type'] == 99) {
             $request['type'] = 0;
         }
@@ -158,6 +164,12 @@ class ElementController extends Controller
         }
         if (empty($request['type'])) {
             $request['type'] = $assignment['type'];
+        }
+        if ($request['x'] == 99) {
+            $request['x'] = 0;
+        }
+        if ($request['y'] == 99) {
+            $request['y'] = 0;
         }
         if ($request['type'] == 99) {
             $request['type'] = 0;

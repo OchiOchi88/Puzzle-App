@@ -223,5 +223,107 @@ class TilesSeeder extends Seeder
             'y' => 2,
             'type' => 1
         ]);
+        Tile::create([
+            'stage' => 5,
+            'x' => -4,
+            'y' => 0,
+            'type' => 1
+        ]);
+        Tile::create([
+            'stage' => 5,
+            'x' => -3,
+            'y' => 0,
+            'type' => 1
+        ]);
+        Tile::create([
+            'stage' => 5,
+            'x' => -2,
+            'y' => 0,
+            'type' => 1
+        ]);
+        Tile::create([
+            'stage' => 5,
+            'x' => -1,
+            'y' => 0,
+            'type' => 1
+        ]);
+        Tile::create([
+            'stage' => 5,
+            'x' => 0,
+            'y' => 0,
+            'type' => 99
+        ]);
+        Tile::create([
+            'stage' => 5,
+            'x' => 1,
+            'y' => 0,
+            'type' => 1
+        ]);
+        Tile::create([
+            'stage' => 5,
+            'x' => 2,
+            'y' => 0,
+            'type' => 1
+        ]);
+        Tile::create([
+            'stage' => 5,
+            'x' => 3,
+            'y' => 0,
+            'type' => 1
+        ]);
+        Tile::create([
+            'stage' => 5,
+            'x' => 4,
+            'y' => 0,
+            'type' => 1
+        ]);
+        Tile::create([
+            'stage' => 5,
+            'x' => 0,
+            'y' => -4,
+            'type' => 1
+        ]);
+        Tile::create([
+            'stage' => 5,
+            'x' => 0,
+            'y' => -3,
+            'type' => 1
+        ]);
+        Tile::create([
+            'stage' => 5,
+            'x' => 0,
+            'y' => -2,
+            'type' => 1
+        ]);
+        Tile::create([
+            'stage' => 5,
+            'x' => 0,
+            'y' => -1,
+            'type' => 1
+        ]);
+        Tile::create([
+            'stage' => 5,
+            'x' => 0,
+            'y' => 1,
+            'type' => 1
+        ]);
+        Tile::create([
+            'stage' => 5,
+            'x' => 0,
+            'y' => 2,
+            'type' => 1
+        ]);
+        Tile::create([
+            'stage' => 5,
+            'x' => 0,
+            'y' => 3,
+            'type' => 1
+        ]);
+        Tile::create([
+            'stage' => 5,
+            'x' => 0,
+            'y' => 4,
+            'type' => 1
+        ]);
     }
 }

@@ -60,11 +60,11 @@ Accept: application/json
 POST http://localhost:8000/api/users/update
 Content-Type: application/json
 Accept: application/json
-Authorization: Bearer 4|9VfGnJfY2QusBEmfIv82YlECzbEapmDuyaJ3dD6i436416e9
+Authorization: Bearer 2|6rh4MGM8DeOA1HOdHkZvfDAAZQLxhMuyOCYCPJx45ffe6235
 
 {
     "name": "testUser",
-    "stage": 9
+    "stage": 2
 }
 
 ###
@@ -78,8 +78,7 @@ Authorization: Bearer 2|CPWt7IIOXmgctTQ2ts5wBcmgYBdtRLbA7NUvI5n5fa9d27e8
 {
     "id": 2,
     "name": "tester",
-    "stage": 10,
-    "achievement": 10
+    "stage": 10
 }
 
 ###
@@ -121,5 +120,31 @@ Accept: application/json
 GET http://localhost:8000/api/tests
 Content-Type: application/json
 Accept: application/json
+
+###
+### 総ステージ数取得
+GET http://localhost:8000/api/stages/count
+Content-Type: application/json
+Accept: application/json
+
+###
+
+### ステージクリア処理
+POST http://localhost:8000/api/users/levelup
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 3|PmJXnJpJKph0XHTjPSMO2bT3DGzORGcFOKRvr6Mr0c1b02df
+
+###
+### ユーザーデータ(自分用のテストプレイアカウント)情報更新
+POST http://localhost:8000/api/users/update
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 1|UA1zZVB9xv4vsmwz02lA837jUz15j6015MXZbhDcdde4ac00
+
+{
+    "name": "testUser",
+    "stage": 2
+}
 
 ###

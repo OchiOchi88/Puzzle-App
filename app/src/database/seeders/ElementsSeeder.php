@@ -65,5 +65,29 @@ class ElementsSeeder extends Seeder
             'y' => 2,
             'type' => 0
         ]);
+        Element::create([
+            'stage' => 5,
+            'x' => 0,
+            'y' => 4,
+            'type' => 3
+        ]);
+        Element::create([
+            'stage' => 5,
+            'x' => 0,
+            'y' => -3,
+            'type' => 1
+        ]);
+        Element::create([
+            'stage' => 5,
+            'x' => -4,
+            'y' => 0,
+            'type' => 0
+        ]);
+        Element::create([
+            'stage' => 5,
+            'x' => 3,
+            'y' => 0,
+            'type' => 0
+        ]);
     }
 }
