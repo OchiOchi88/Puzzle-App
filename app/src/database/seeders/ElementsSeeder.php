@@ -89,5 +89,125 @@ class ElementsSeeder extends Seeder
             'y' => 0,
             'type' => 0
         ]);
+        Element::create([
+            'stage' => 6,
+            'x' => -4,
+            'y' => 0,
+            'type' => 0
+        ]);
+        Element::create([
+            'stage' => 6,
+            'x' => 4,
+            'y' => 0,
+            'type' => 0
+        ]);
+        Element::create([
+            'stage' => 6,
+            'x' => -3,
+            'y' => 0,
+            'type' => 2
+        ]);
+        Element::create([
+            'stage' => 6,
+            'x' => 3,
+            'y' => 0,
+            'type' => 4
+        ]);
+        Element::create([
+            'stage' => 7,
+            'x' => 3,
+            'y' => 1,
+            'type' => 4
+        ]);
+        Element::create([
+            'stage' => 7,
+            'x' => -4,
+            'y' => 1,
+            'type' => 2
+        ]);
+        Element::create([
+            'stage' => 7,
+            'x' => -4,
+            'y' => 3,
+            'type' => 0
+        ]);
+        Element::create([
+            'stage' => 7,
+            'x' => 4,
+            'y' => -1,
+            'type' => 0
+        ]);
+        Element::create([
+            'stage' => 8,
+            'x' => -2,
+            'y' => -3,
+            'type' => 1
+        ]);
+        Element::create([
+            'stage' => 8,
+            'x' => -2,
+            'y' => 3,
+            'type' => 0
+        ]);
+        Element::create([
+            'stage' => 8,
+            'x' => 2,
+            'y' => 3,
+            'type' => 3
+        ]);
+        Element::create([
+            'stage' => 8,
+            'x' => 2,
+            'y' => -3,
+            'type' => 0
+        ]);
+        Element::create([
+            'stage' => 9,
+            'x' => 0,
+            'y' => -4,
+            'type' => 1
+        ]);
+        Element::create([
+            'stage' => 9,
+            'x' => 0,
+            'y' => -1,
+            'type' => 1
+        ]);
+        Element::create([
+            'stage' => 9,
+            'x' => 0,
+            'y' => 4,
+            'type' => 0
+        ]);
+        Element::create([
+            'stage' => 9,
+            'x' => 0,
+            'y' => 3,
+            'type' => 0
+        ]);
+        Element::create([
+            'stage' => 10,
+            'x' => -3,
+            'y' => 0,
+            'type' => 2
+        ]);
+        Element::create([
+            'stage' => 10,
+            'x' => -2,
+            'y' => 0,
+            'type' => 2
+        ]);
+        Element::create([
+            'stage' => 10,
+            'x' => 3,
+            'y' => 0,
+            'type' => 0
+        ]);
+        Element::create([
+            'stage' => 10,
+            'x' => 2,
+            'y' => 0,
+            'type' => 0
+        ]);
     }
 }

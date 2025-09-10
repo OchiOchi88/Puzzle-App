@@ -14,9 +14,5 @@ class UsersSeeder extends Seeder
      */
     public function run(): void
     {
-        User::create([
-            'stage' => 0,
-            'name' => 'jobiTester'
-        ]);
     }
 }

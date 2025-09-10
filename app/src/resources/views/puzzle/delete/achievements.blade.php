@@ -6,7 +6,6 @@
     @csrf
     <p>実績番号</p>
     <input type="number" name="achieve_number"/>
-    <input type="hidden" name="csrf" value="{{$request}}"/>
     <input type="submit" value="削除"/>
 </form>
 
@@ -15,7 +14,6 @@
 </a>
 <form id="achieve-form" method="get" action="{{ url('achievements') }}" style="display:none;">
     @csrf
-    <input type="hidden" name="csrf" value="{{ $request }}">
 </form>
 <br>
 
@@ -24,6 +22,5 @@
 </a>
 <form id="home-form" method="post" action="{{ url('home') }}" style="display:none;">
     @csrf
-    <input type="hidden" name="csrf" value="{{ $request }}">
 </form>
 <br>

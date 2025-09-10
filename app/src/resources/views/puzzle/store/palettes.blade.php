@@ -14,7 +14,6 @@
     <p>12~14:特殊方向転換タイル(時計回り、反時計回り、反発)</p>
     <p>15~20:充電タイル(100%、80%、60%、40%、20%、0%)</p>
     <p>21:エンジニアタイル(エンジニアタイルは反発以外の方向転換系タイルを反転、地雷タイルを１回遅らせる)</p>
-    <input type="hidden" name="csrf" value="{{$request}}"/>
     <input type="submit" value="登録"/>
 </form>
 
@@ -24,7 +23,6 @@
 <form id="palette-form" method="get" action="{{ url('palettes') }}" style="display:none;">
     @csrf
     <input type="hidden" name="first_access" value="1">
-    <input type="hidden" name="csrf" value="{{ $request }}">
 </form>
 <br>
 
@@ -34,6 +32,5 @@
 <form id="home-form" method="post" action="{{ url('home') }}" style="display:none;">
     @csrf
     <input type="hidden" name="first_access" value="1">
-    <input type="hidden" name="csrf" value="{{ $request }}">
 </form>
 <br>

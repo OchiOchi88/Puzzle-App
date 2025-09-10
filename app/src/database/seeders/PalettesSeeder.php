@@ -87,6 +87,14 @@ class PalettesSeeder extends Seeder
             'type' => 5
         ]);
         Palette::create([
+            'stage' => 5,
+            'type' => 12
+        ]);
+        Palette::create([
+            'stage' => 5,
+            'type' => 13
+        ]);
+        Palette::create([
             'stage' => 6,
             'type' => 1
         ]);
@@ -140,7 +148,15 @@ class PalettesSeeder extends Seeder
         ]);
         Palette::create([
             'stage' => 7,
-            'type' => 15
+            'type' => 12
+        ]);
+        Palette::create([
+            'stage' => 7,
+            'type' => 13
+        ]);
+        Palette::create([
+            'stage' => 7,
+            'type' => 14
         ]);
         Palette::create([
             'stage' => 8,
@@ -175,8 +191,32 @@ class PalettesSeeder extends Seeder
             'type' => 14
         ]);
         Palette::create([
-            'stage' => 8,
-            'type' => 20
+            'stage' => 9,
+            'type' => 1
+        ]);
+        Palette::create([
+            'stage' => 9,
+            'type' => 2
+        ]);
+        Palette::create([
+            'stage' => 9,
+            'type' => 3
+        ]);
+        Palette::create([
+            'stage' => 9,
+            'type' => 4
+        ]);
+        Palette::create([
+            'stage' => 9,
+            'type' => 5
+        ]);
+        Palette::create([
+            'stage' => 10,
+            'type' => 1
+        ]);
+        Palette::create([
+            'stage' => 10,
+            'type' => 7
         ]);
     }
 }

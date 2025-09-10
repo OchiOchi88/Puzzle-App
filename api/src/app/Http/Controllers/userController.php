@@ -67,11 +67,16 @@ class UserController extends Controller
         // ユーザー登録
         $user = User::create([
             'name' => $request->name,
-            'stage' => $request->stage
+            'stage' => $request->stage,
+            'token' => "0"
         ]);
 
         //  APIトークンを発行する
         $token = $user->createToken($request->name)->plainTextToken;
+
+        User::where('name', '=', $request->name)->update([
+            'token' => $token
+        ]);
 
         $user->save();
 

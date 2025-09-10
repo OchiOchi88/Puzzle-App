@@ -25,8 +25,8 @@ class StageController extends Controller
         //dd($responses);
         return view('puzzle/stages', [
             'responses' => $responses,
-            'records' => $records,
-            'request' => $request
+            'records' => $records
+            //'request' => $request
         ]);
     }
 
@@ -38,21 +38,23 @@ class StageController extends Controller
         //  ステージ登録処理
         if (empty($request['level'])) {
             $error_id = "ステージのレベルは必須です！";
-            return view('puzzle/store/stage', ['error_id' => $error_id]);
+            return view('puzzle/store/stages', ['error_id' => $error_id]);
         }
-        $validateLvl = Stage::Where('level', '=', $request->level)->get();
+        $validateLvl = Stage::Where('level', '=', $request->level)->first();
         if (!empty($validateLvl)) {
             $error_id = "既にそのレベルのステージが存在します！";
-            return view('puzzle/store/stage', ['error_id' => $error_id]);
+            return view('puzzle/store/stages', ['error_id' => $error_id]);
         }
         if (empty($request['name'])) {
             $error_id = "ステージ名は必須です！";
             return view('puzzle/store/stages', ['error_id' => $error_id]);
         }
+        //$level = intval($request['level']);
+        //dd($level);
         //  レコードを追加(insert)
         Stage::create([
             'level' => $request['level'],
-            'name' => $request['name']
+            'name' => $request['name'],
         ]);
         $pdo = new PDO("mysql:host=mysql;dbname=puzzle_db;", "jobi", "jobi");
 

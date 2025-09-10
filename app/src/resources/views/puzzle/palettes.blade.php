@@ -71,7 +71,6 @@
 <form id="store-form" method="post" action="{{ url('palettes/store') }}" style="display:none;">
     @csrf
     <input type="hidden" name="first_access" value="1">
-    <input type="hidden" name="csrf" value="{{ $request }}">
 </form>
 <br>
 
@@ -82,7 +81,6 @@
 <form id="delete-form" method="post" action="{{ url('palettes/delete') }}" style="display:none;">
     @csrf
     <input type="hidden" name="first_access" value="1">
-    <input type="hidden" name="csrf" value="{{ $request }}">
 </form>
 <br>
 <a href="#" onclick="event.preventDefault(); document.getElementById('home-form').submit();">
@@ -90,7 +88,6 @@
 </a>
 <form id="home-form" method="post" action="{{ url('home') }}" style="display:none;">
     @csrf
-    <input type="hidden" name="csrf" value="{{ $request }}">
 </form>
 </body>
 </html>

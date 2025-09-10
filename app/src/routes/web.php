@@ -74,9 +74,21 @@ Route::post('elements/update', [ElementController::class, 'update']);
 Route::post('elements/delete', [ElementController::class, 'delete']);
 Route::post('palettes/store', [PaletteController::class, 'store']);
 Route::post('palettes/delete', [PaletteController::class, 'delete']);
+Route::post('stages/store', [StageController::class, 'store']);
+Route::post('stages/update', [StageController::class, 'update']);
+Route::post('stages/delete', [StageController::class, 'delete']);
+Route::post('tiles/store', [TileController::class, 'store']);
+Route::post('tiles/update', [TileController::class, 'update']);
+Route::post('tiles/delete', [TileController::class, 'delete']);
+Route::post('user-achievements/store', [UserAchievementController::class, 'store']);
+Route::post('user-achievements/delete', [UserAchievementController::class, 'delete']);
+Route::post('users/store', [UserController::class, 'store']);
+Route::post('users/update', [UserController::class, 'update']);
+Route::post('users/delete', [UserController::class, 'delete']);
+
 // ユーザー登録
-Route::post('users/store', [UserController::class, 'store'])->name('user.store');
+//Route::post('users/store', [UserController::class, 'store'])->name('user.store');
 
 // ユーザー情報更新
-Route::post('users/update', [UserController::class, 'update'])
-    ->middleware('auth:sanctum')->name('users.update');
+//Route::post('users/update', [UserController::class, 'update'])
+//    ->middleware('auth:sanctum')->name('users.update');

@@ -325,5 +325,437 @@ class TilesSeeder extends Seeder
             'y' => 4,
             'type' => 1
         ]);
+        Tile::create([
+            'stage' => 6,
+            'x' => -4,
+            'y' => 0,
+            'type' => 1
+        ]);
+        Tile::create([
+            'stage' => 6,
+            'x' => -3,
+            'y' => 0,
+            'type' => 1
+        ]);
+        Tile::create([
+            'stage' => 6,
+            'x' => -2,
+            'y' => 0,
+            'type' => 1
+        ]);
+        Tile::create([
+            'stage' => 6,
+            'x' => -1,
+            'y' => 0,
+            'type' => 1
+        ]);
+        Tile::create([
+            'stage' => 6,
+            'x' => 0,
+            'y' => 0,
+            'type' => 99
+        ]);
+        Tile::create([
+            'stage' => 6,
+            'x' => 1,
+            'y' => 0,
+            'type' => 1
+        ]);
+        Tile::create([
+            'stage' => 6,
+            'x' => 2,
+            'y' => 0,
+            'type' => 1
+        ]);
+        Tile::create([
+            'stage' => 6,
+            'x' => 3,
+            'y' => 0,
+            'type' => 1
+        ]);
+        Tile::create([
+            'stage' => 6,
+            'x' => 4,
+            'y' => 0,
+            'type' => 1
+        ]);
+        Tile::create([
+            'stage' => 7,
+            'x' => 1,
+            'y' => 0,
+            'type' => 1
+        ]);
+        Tile::create([
+            'stage' => 7,
+            'x' => 1,
+            'y' => -1,
+            'type' => 1
+        ]);
+        Tile::create([
+            'stage' => 7,
+            'x' => -1,
+            'y' => 1,
+            'type' => 99
+        ]);
+        Tile::create([
+            'stage' => 7,
+            'x' => 0,
+            'y' => 1,
+            'type' => 1
+        ]);
+        Tile::create([
+            'stage' => 7,
+            'x' => 0,
+            'y' => -1,
+            'type' => 1
+        ]);
+        Tile::create([
+            'stage' => 7,
+            'x' => -1,
+            'y' => 0,
+            'type' => 1
+        ]);
+        Tile::create([
+            'stage' => 7,
+            'x' => 1,
+            'y' => 1,
+            'type' => 99
+        ]);
+        Tile::create([
+            'stage' => 7,
+            'x' => 2,
+            'y' => 1,
+            'type' => 1
+        ]);
+        Tile::create([
+            'stage' => 7,
+            'x' => -1,
+            'y' => -1,
+            'type' => 99
+        ]);
+        Tile::create([
+            'stage' => 7,
+            'x' => 3,
+            'y' => 1,
+            'type' => 1
+        ]);
+        Tile::create([
+            'stage' => 7,
+            'x' => 2,
+            'y' => -1,
+            'type' => 1
+        ]);
+        Tile::create([
+            'stage' => 7,
+            'x' => 3,
+            'y' => -1,
+            'type' => 1
+        ]);
+        Tile::create([
+            'stage' => 7,
+            'x' => 4,
+            'y' => -1,
+            'type' => 1
+        ]);
+        Tile::create([
+            'stage' => 7,
+            'x' => 1,
+            'y' => 2,
+            'type' => 1
+        ]);
+        Tile::create([
+            'stage' => 7,
+            'x' => 1,
+            'y' => 3,
+            'type' => 5
+        ]);
+        Tile::create([
+            'stage' => 7,
+            'x' => 0,
+            'y' => 3,
+            'type' => 1
+        ]);
+        Tile::create([
+            'stage' => 7,
+            'x' => -1,
+            'y' => 3,
+            'type' => 1
+        ]);
+        Tile::create([
+            'stage' => 7,
+            'x' => -2,
+            'y' => 3,
+            'type' => 1
+        ]);
+        Tile::create([
+            'stage' => 7,
+            'x' => -3,
+            'y' => 3,
+            'type' => 1
+        ]);
+        Tile::create([
+            'stage' => 7,
+            'x' => -4,
+            'y' => 3,
+            'type' => 1
+        ]);
+        Tile::create([
+            'stage' => 7,
+            'x' => -2,
+            'y' => 1,
+            'type' => 1
+        ]);
+        Tile::create([
+            'stage' => 7,
+            'x' => -3,
+            'y' => 1,
+            'type' => 1
+        ]);
+        Tile::create([
+            'stage' => 7,
+            'x' => -4,
+            'y' => 1,
+            'type' => 1
+        ]);
+        Tile::create([
+            'stage' => 8,
+            'x' => -2,
+            'y' => -3,
+            'type' => 1
+        ]);
+        Tile::create([
+            'stage' => 8,
+            'x' => -2,
+            'y' => -2,
+            'type' => 1
+        ]);
+        Tile::create([
+            'stage' => 8,
+            'x' => -2,
+            'y' => -1,
+            'type' => 1
+        ]);
+        Tile::create([
+            'stage' => 8,
+            'x' => -2,
+            'y' => 0,
+            'type' => 12
+        ]);
+        Tile::create([
+            'stage' => 8,
+            'x' => -2,
+            'y' => 1,
+            'type' => 1
+        ]);
+        Tile::create([
+            'stage' => 8,
+            'x' => -2,
+            'y' => 2,
+            'type' => 1
+        ]);
+        Tile::create([
+            'stage' => 8,
+            'x' => -2,
+            'y' => 3,
+            'type' => 1
+        ]);
+        Tile::create([
+            'stage' => 8,
+            'x' => 2,
+            'y' => 3,
+            'type' => 1
+        ]);
+        Tile::create([
+            'stage' => 8,
+            'x' => 2,
+            'y' => 2,
+            'type' => 1
+        ]);
+        Tile::create([
+            'stage' => 8,
+            'x' => 2,
+            'y' => 1,
+            'type' => 1
+        ]);
+        Tile::create([
+            'stage' => 8,
+            'x' => 2,
+            'y' => 0,
+            'type' => 12
+        ]);
+        Tile::create([
+            'stage' => 8,
+            'x' => 2,
+            'y' => -1,
+            'type' => 1
+        ]);
+        Tile::create([
+            'stage' => 8,
+            'x' => 2,
+            'y' => -2,
+            'type' => 1
+        ]);
+        Tile::create([
+            'stage' => 8,
+            'x' => 2,
+            'y' => -3,
+            'type' => 1
+        ]);
+        Tile::create([
+            'stage' => 8,
+            'x' => -1,
+            'y' => 0,
+            'type' => 1
+        ]);
+        Tile::create([
+            'stage' => 8,
+            'x' => 1,
+            'y' => 0,
+            'type' => 1
+        ]);
+        Tile::create([
+            'stage' => 8,
+            'x' => 0,
+            'y' => 0,
+            'type' => 99
+        ]);
+        Tile::create([
+            'stage' => 9,
+            'x' => 0,
+            'y' => -4,
+            'type' => 1
+        ]);
+        Tile::create([
+            'stage' => 9,
+            'x' => 0,
+            'y' => -3,
+            'type' => 1
+        ]);
+        Tile::create([
+            'stage' => 9,
+            'x' => 0,
+            'y' => -2,
+            'type' => 99
+        ]);
+        Tile::create([
+            'stage' => 9,
+            'x' => 0,
+            'y' => -1,
+            'type' => 1
+        ]);
+        Tile::create([
+            'stage' => 9,
+            'x' => 0,
+            'y' => 0,
+            'type' => 7
+        ]);
+        Tile::create([
+            'stage' => 9,
+            'x' => 0,
+            'y' => 1,
+            'type' => 1
+        ]);
+        Tile::create([
+            'stage' => 9,
+            'x' => 0,
+            'y' => 2,
+            'type' => 99
+        ]);
+        Tile::create([
+            'stage' => 9,
+            'x' => 0,
+            'y' => 3,
+            'type' => 1
+        ]);
+        Tile::create([
+            'stage' => 9,
+            'x' => 0,
+            'y' => 4,
+            'type' => 1
+        ]);
+        Tile::create([
+            'stage' => 9,
+            'x' => 1,
+            'y' => -2,
+            'type' => 1
+        ]);
+        Tile::create([
+            'stage' => 9,
+            'x' => 2,
+            'y' => -2,
+            'type' => 2
+        ]);
+        Tile::create([
+            'stage' => 9,
+            'x' => 2,
+            'y' => -1,
+            'type' => 1
+        ]);
+        Tile::create([
+            'stage' => 9,
+            'x' => 2,
+            'y' => 0,
+            'type' => 1
+        ]);
+        Tile::create([
+            'stage' => 9,
+            'x' => 2,
+            'y' => 1,
+            'type' => 1
+        ]);
+        Tile::create([
+            'stage' => 9,
+            'x' => 2,
+            'y' => 2,
+            'type' => 5
+        ]);
+        Tile::create([
+            'stage' => 9,
+            'x' => 1,
+            'y' => 2,
+            'type' => 1
+        ]);
+        Tile::create([
+            'stage' => 10,
+            'x' => -3,
+            'y' => 0,
+            'type' => 1
+        ]);
+        Tile::create([
+            'stage' => 10,
+            'x' => -2,
+            'y' => 0,
+            'type' => 1
+        ]);
+        Tile::create([
+            'stage' => 10,
+            'x' => -1,
+            'y' => 0,
+            'type' => 18
+        ]);
+        Tile::create([
+            'stage' => 10,
+            'x' => 0,
+            'y' => 0,
+            'type' => 99
+        ]);
+        Tile::create([
+            'stage' => 10,
+            'x' => 1,
+            'y' => 0,
+            'type' => 1
+        ]);
+        Tile::create([
+            'stage' => 10,
+            'x' => 2,
+            'y' => 0,
+            'type' => 1
+        ]);
+        Tile::create([
+            'stage' => 10,
+            'x' => 3,
+            'y' => 0,
+            'type' => 1
+        ]);
     }
 }

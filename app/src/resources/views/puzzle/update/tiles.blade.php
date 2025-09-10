@@ -8,11 +8,11 @@
     <input type="number" name="id"/>
     <p>ステージ(空欄で変更なし)</p>
     <input type="number" name="stage"/>
-    <p>x座標(空欄で変更なし)</p>
+    <p>x座標(空欄で変更なし)(99と入力で0)</p>
     <input type="number" name="x"/>
-    <p>y座標(空欄で変更なし)</p>
+    <p>y座標(空欄で変更なし)(99と入力で0)</p>
     <input type="number" name="y"/>
-    <p>方向(空欄で変更なし)</p>
+    <p>種類(空欄で変更なし)</p>
     <input type="number" name="type"/>
     <p>1:通常</p>
     <p>2~5:方向転換(上、右、下、左)</p>
@@ -21,7 +21,6 @@
     <p>15~20:充電タイル(100%、80%、60%、40%、20%、0%)</p>
     <p>21:エンジニアタイル(エンジニアタイルは反発以外の方向転換系タイルを反転、地雷タイルを１回遅らせる)</p>
     <p>99:空タイル (プレイヤーに設置させる)</p>
-    <input type="hidden" name="csrf" value="{{$request}}"/>
     <input type="submit" value="更新"/>
 </form>
 
@@ -31,7 +30,6 @@
 <form id="tile-form" method="get" action="{{ url('tiles') }}" style="display:none;">
     @csrf
     <input type="hidden" name="first_access" value="1">
-    <input type="hidden" name="csrf" value="{{ $request }}">
 </form>
 <br>
 
@@ -41,6 +39,5 @@
 <form id="home-form" method="post" action="{{ url('home') }}" style="display:none;">
     @csrf
     <input type="hidden" name="first_access" value="1">
-    <input type="hidden" name="csrf" value="{{ $request }}">
 </form>
 <br>

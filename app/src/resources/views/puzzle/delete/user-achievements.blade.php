@@ -4,9 +4,8 @@
 @endif
 <form method="post" action="{{url('user-achievements/delete')}}">
     @csrf
-    <p>ユーザー実績ID</p>
+    <p>ID</p>
     <input type="number" name="id"/>
-    <input type="hidden" name="csrf" value="{{$request}}"/>
     <input type="submit" value="削除"/>
 </form>
 
@@ -15,7 +14,6 @@
 </a>
 <form id="user-achievement-form" method="get" action="{{ url('user-achievements') }}" style="display:none;">
     @csrf
-    <input type="hidden" name="csrf" value="{{ $request }}">
 </form>
 <br>
 
@@ -24,6 +22,5 @@
 </a>
 <form id="home-form" method="post" action="{{ url('home') }}" style="display:none;">
     @csrf
-    <input type="hidden" name="csrf" value="{{ $request }}">
 </form>
 <br>

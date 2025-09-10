@@ -8,7 +8,6 @@
     <input type="number" name="user_id"/>
     <p>実績ID</p>
     <input type="text" name="achievement_id"/>
-    <input type="hidden" name="csrf" value="{{$request}}"/>
     <input type="submit" value="登録"/>
 </form>
 
@@ -18,7 +17,6 @@
 <form id="user-achievement-form" method="get" action="{{ url('user-achievements') }}" style="display:none;">
     @csrf
     <input type="hidden" name="first_access" value="1">
-    <input type="hidden" name="csrf" value="{{ $request }}">
 </form>
 <br>
 
@@ -28,6 +26,5 @@
 <form id="home-form" method="post" action="{{ url('home') }}" style="display:none;">
     @csrf
     <input type="hidden" name="first_access" value="1">
-    <input type="hidden" name="csrf" value="{{ $request }}">
 </form>
 <br>
