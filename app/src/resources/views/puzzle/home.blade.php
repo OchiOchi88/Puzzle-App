@@ -55,4 +55,36 @@
         <input type="hidden" name="page" value="7"/>
     </form>
     <br>
+    <a href="#" onclick="event.preventDefault(); document.getElementById('user-stages-form').submit();">
+        ユーザーステージ一覧へ
+    </a>
+    <form id="user-stages-form" method="get" action="{{ url('user-stages') }}" style="display:none;">
+        @csrf
+        <input type="hidden" name="page" value="8"/>
+    </form>
+    <br>
+    <a href="#" onclick="event.preventDefault(); document.getElementById('user-tiles-form').submit();">
+        ユーザータイル一覧へ
+    </a>
+    <form id="user-tiles-form" method="get" action="{{ url('user-tiles') }}" style="display:none;">
+        @csrf
+        <input type="hidden" name="page" value="9"/>
+    </form>
+    <br>
+    <a href="#" onclick="event.preventDefault(); document.getElementById('user-elements-form').submit();">
+        ユーザー元素一覧へ
+    </a>
+    <form id="user-elements-form" method="get" action="{{ url('user-elements') }}" style="display:none;">
+        @csrf
+        <input type="hidden" name="page" value="10"/>
+    </form>
+    <br>
+    <a href="#" onclick="event.preventDefault(); document.getElementById('user-palettes-form').submit();">
+        ユーザーパレット一覧へ
+    </a>
+    <form id="user-palettes-form" method="get" action="{{ url('user-palettes') }}" style="display:none;">
+        @csrf
+        <input type="hidden" name="page" value="11"/>
+    </form>
+    <br>
 </div>

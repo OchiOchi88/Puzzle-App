@@ -3,6 +3,10 @@
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\CreateItemController;
 use App\Http\Controllers\TestController;
+use App\Http\Controllers\UserElementController;
+use App\Http\Controllers\UserPaletteController;
+use App\Http\Controllers\UserStageController;
+use App\Http\Controllers\UserTileController;
 use App\Http\Middleware\AuthMiddleware;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
@@ -85,6 +89,12 @@ Route::post('user-achievements/delete', [UserAchievementController::class, 'dele
 Route::post('users/store', [UserController::class, 'store']);
 Route::post('users/update', [UserController::class, 'update']);
 Route::post('users/delete', [UserController::class, 'delete']);
+
+Route::get('user-stages', [UserStageController::class, 'index']);
+Route::get('user-tiles', [UserTileController::class, 'index']);
+Route::get('user-elements', [UserElementController::class, 'index']);
+Route::get('user-palettes', [UserPaletteController::class, 'index']);
+Route::post('publish', [UserStageController::class, 'publish']);
 
 // ユーザー登録
 //Route::post('users/store', [UserController::class, 'store'])->name('user.store');
